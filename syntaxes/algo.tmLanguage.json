@@ -8,9 +8,27 @@
 		{ "include": "#arithmetic_operators" },
 		{ "include": "#specials" },
 		{ "include": "#caracters" },
-		{ "include": "#function_call" }
+		{ "include": "#function_call" },
+		{ "include": "#question"},
+		{ "include": "#function_name" }
 	],
 	"repository": {
+		"question": {
+			"begin": "",
+			"end": "",
+			"patterns": [{
+				"name": "markup.heading",
+				"match": "^(\\d+\\)\\s+\\w+|\\w|[*#-]).*"
+			}]
+		},
+		"function_name": {
+			"begin": "ALGORITHME ",
+			"end": "\n",
+			"patterns": [{
+				"name": "entity.name.class",
+				"match": "\\w+"
+			}]
+		},
 		"function_call": {
 			"begin": "",
 			"end": "",
@@ -32,7 +50,7 @@
 			"end": "",
 			"patterns": [{
 				"name": "keyword.control.algo",
-				"match": "\\b(ALGORITHM|DEBUT|FIN.*|Lire|Ecrire|VARIABLE|CONSTANTE|FONCTION|SI|POUR|TANTQUE|FAIRE|PAS DE|ALORS|SINON|ET|OU|SELON)\\b"
+				"match": "\\b(ALGORITHME?|DEBUT|FIN.*|Lire|Ecrire|VARIABLE|CONSTANTE|FONCTION|SI|POUR|TANTQUE|FAIRE|PAS DE|ALORS|SINON|ET|OU|SELON)\\b"
 			}]
 		},
 		"arithmetic_operators": {
@@ -40,7 +58,7 @@
 			"end": "",
 			"patterns": [{
 				"name": "keyword.operator",
-				"match": "\\b[+-/*]\\b"
+				"match": "\\b([+-/*=]|<-)\\b"
 			}]
 		},
 		"specials": {
@@ -49,27 +67,23 @@
 			"patterns": [{
 				"name": "constant.character",
 				"match": "\\b(VRAI|FAUX|NULL)\\b"
-			}],
-			"theme_color": "#algo.error",
-			"settings": {
-				"foreground": "#algo.error"
-			 }
+			}]
 		},
 		"strings": {
 			"name": "string.quoted.double.algo",
 			"begin": "\"",
 			"end": "\"",
 			"patterns": [{
-				"name": "constant.character.escape.algo",
+				"name": "constant.character.escape",
 				"match": "\".*\""
 			}]
 		},
 		"caracters": {
 			"name": "string.quoted.single",
-			"begin": "",
-			"end": "",
+			"begin": "'",
+			"end": "'",
 			"patterns": [{
-				"name": "constant.character.escape.algo",
+				"name": "constant.character",
 				"match": "'\\w'"
 			}]
 		}
