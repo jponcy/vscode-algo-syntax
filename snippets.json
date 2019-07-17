@@ -1,18 +1,2 @@
 {
-	"Algorithm": {
-		"prefix": "algo",
-		"body": "ALGORITHM $1\nDEBUT\nFIN\n"
-	},
-	"Algorithm constant area": {
-		"prefix": "const",
-		"body": "CONSTANTE\n    $1"
-	},
-	"Algorithm varialbe area": {
-		"prefix": "var",
-		"body": "VARIABLE\n    $1"
-    },
-    "Algorithm function": {
-        "prefix": "fonction",
-        "body": "FONCTION $1\n    DEBUT\n    FIN\nFINFONCTION"
-    }
 }
